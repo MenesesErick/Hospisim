@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Bem-vindo ao HOSPISIM";
+}
+
+<div class="container-fluid text-center mt-5">
+    <div class="jumbotron bg-transparent">
+        <i class="fa-solid fa-hospital-user fa-3x" style="color: #007bff;"></i>
+        <h1 class="display-3 mt-3">HOSPISIM</h1>
+        <p class="lead">Seu Sistema de Gestão Clínica Integrada.</p>
+        <hr class="my-4">
+        <p>Gerencie pacientes, agende atendimentos e acompanhe internações de forma eficiente e centralizada.</p>
+        <p class="lead mt-4">
+            <a class="btn btn-primary btn-lg" asp-controller="Atendimentos" asp-action="Index" role="button">Ver Atendimentos</a>
+            <a class="btn btn-secondary btn-lg" asp-controller="Pacientes" asp-action="Create" role="button">Novo Paciente</a>
+        </p>
+    </div>
+</div>

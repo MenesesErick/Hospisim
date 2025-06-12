@@ -1,0 +1,55 @@
+﻿@model Hospisim.Models.Internacao
+
+@{
+    ViewData["Title"] = "Detalhes da Internação";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>Internação</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Paciente
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Atendimento.Paciente.NomeCompleto)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataEntrada)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataEntrada)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MotivoInternacao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MotivoInternacao)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Setor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Setor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Leito)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Leito)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StatusInternacao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StatusInternacao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-controller="AltasHospitalares" asp-action="Create" asp-route-internacaoId="@Model.Id" class="btn btn-warning">Conceder Alta Hospitalar</a>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
+    <a asp-action="Index">Voltar para a Lista</a>
+</div>

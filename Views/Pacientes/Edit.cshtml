@@ -1,0 +1,107 @@
+﻿@model Hospisim.Models.Paciente
+
+@{
+    ViewData["Title"] = "Editar Cadastro do Paciente";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>@Model.NomeCompleto</h4>
+<hr />
+<form asp-action="Edit">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <input type="hidden" asp-for="Id" />
+
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Dados Pessoais</h4>
+            <div class="form-group mb-3">
+                <label asp-for="NomeCompleto" class="control-label"></label>
+                <input asp-for="NomeCompleto" class="form-control" />
+                <span asp-validation-for="NomeCompleto" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="CPF" class="control-label"></label>
+                <input asp-for="CPF" class="form-control" readonly />
+                <span asp-validation-for="CPF" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="DataNascimento" class="control-label"></label>
+                <input asp-for="DataNascimento" class="form-control" type="date" />
+                <span asp-validation-for="DataNascimento" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Sexo" class="control-label"></label>
+                <select asp-for="Sexo" class="form-select">
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Outro">Outro</option>
+                </select>
+                <span asp-validation-for="Sexo" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="EstadoCivil" class="control-label"></label>
+                <select asp-for="EstadoCivil" class="form-select">
+                    <option value="Solteiro(a)">Solteiro(a)</option>
+                    <option value="Casado(a)">Casado(a)</option>
+                    <option value="Divorciado(a)">Divorciado(a)</option>
+                    <option value="Viúvo(a)">Viúvo(a)</option>
+                    <option value="União Estável">União Estável</option>
+                </select>
+                <span asp-validation-for="EstadoCivil" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h4>Contato e Dados de Saúde</h4>
+            <div class="form-group mb-3">
+                <label asp-for="Telefone" class="control-label"></label>
+                <input asp-for="Telefone" class="form-control" />
+                <span asp-validation-for="Telefone" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="EnderecoCompleto" class="control-label"></label>
+                <input asp-for="EnderecoCompleto" class="form-control" />
+                <span asp-validation-for="EnderecoCompleto" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="TipoSanguineo" class="control-label"></label>
+                <select asp-for="TipoSanguineo" class="form-select">
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+                <span asp-validation-for="TipoSanguineo" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="NumeroCartaoSUS" class="control-label"></label>
+                <input asp-for="NumeroCartaoSUS" class="form-control" />
+                <span asp-validation-for="NumeroCartaoSUS" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check mb-3">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="PossuiPlanoSaude" /> @Html.DisplayNameFor(model => model.PossuiPlanoSaude)
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group mt-4">
+        <input type="submit" value="Salvar Alterações" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

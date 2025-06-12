@@ -1,0 +1,67 @@
+﻿@model Hospisim.Models.Internacao
+
+@{
+    ViewData["Title"] = "Registrar Internação";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>Paciente: <strong>@Model.Atendimento.Paciente.NomeCompleto</strong></h4>
+<p>Referente ao atendimento de @Model.Atendimento.DataHora.ToString("dd/MM/yyyy HH:mm")</p>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="AtendimentoId" />
+
+            <div class="form-group mb-3">
+                <label asp-for="DataEntrada" class="control-label"></label>
+                <input asp-for="DataEntrada" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DataEntrada" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="MotivoInternacao" class="control-label"></label>
+                <textarea asp-for="MotivoInternacao" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="MotivoInternacao" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Setor" class="control-label"></label>
+                <select asp-for="Setor" class="form-control">
+                    <option value="">Selecione...</option>
+                    <option value="UTI">UTI</option>
+                    <option value="Clínica Geral">Clínica Geral</option>
+                    <option value="Pediatria">Pediatria</option>
+                    <option value="Cardiologia">Cardiologia</option>
+                </select>
+                <span asp-validation-for="Setor" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Quarto" class="control-label"></label>
+                <input asp-for="Quarto" class="form-control" />
+                <span asp-validation-for="Quarto" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Leito" class="control-label"></label>
+                <input asp-for="Leito" class="form-control" />
+                <span asp-validation-for="Leito" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Salvar Internação" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="mt-3">
+    <a asp-controller="Atendimentos" asp-action="Details" asp-route-id="@Model.AtendimentoId">Cancelar e Voltar</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

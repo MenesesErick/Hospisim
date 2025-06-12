@@ -1,0 +1,105 @@
+﻿@model Hospisim.Models.Paciente
+
+@{
+    ViewData["Title"] = "Detalhes do Paciente";
+}
+
+<h1>@Model.NomeCompleto</h1>
+<p>CPF: @Model.CPF</p>
+<hr />
+
+<h4><i class="fa-solid fa-id-card"></i> Dados Pessoais e Contato</h4>
+<dl class="row mt-3">
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DataNascimento)</dt>
+    <dd class="col-sm-9">@Model.DataNascimento.ToString("dd/MM/yyyy")</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Sexo)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.Sexo)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.EstadoCivil)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.EstadoCivil)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Telefone)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.Telefone)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Email)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.Email)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.EnderecoCompleto)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.EnderecoCompleto)</dd>
+</dl>
+<hr />
+
+<h4><i class="fa-solid fa-heart-pulse"></i> Dados de Saúde</h4>
+<dl class="row mt-3">
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.TipoSanguineo)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.TipoSanguineo)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NumeroCartaoSUS)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.NumeroCartaoSUS)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.PossuiPlanoSaude)</dt>
+    <dd class="col-sm-9">@(Model.PossuiPlanoSaude ? "Sim" : "Não")</dd>
+</dl>
+<hr />
+
+@if (Model.Prontuarios.Any())
+{
+    var prontuario = Model.Prontuarios.FirstOrDefault();
+    <h4><i class="fa-solid fa-file-medical"></i> Dados do Prontuário</h4>
+    <dl class="row mt-3">
+        <dt class="col-sm-3">Número do Prontuário</dt>
+        <dd class="col-sm-9">@prontuario.NumeroProntuario</dd>
+
+        <dt class="col-sm-3">Data de Abertura</dt>
+        <dd class="col-sm-9">@prontuario.DataAbertura.ToString("dd/MM/yyyy")</dd>
+    </dl>
+    <hr />
+}
+
+<div class="mt-4">
+    <h4><i class="fa-solid fa-notes-medical"></i> Histórico de Atendimentos</h4>
+    <table class="table table-striped mt-3">
+        <thead>
+            <tr>
+                <th>Data e Hora</th>
+                <th>Tipo</th>
+                <th>Profissional</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Atendimentos.Any())
+            {
+                @foreach (var atendimento in Model.Atendimentos.OrderByDescending(a => a.DataHora))
+                {
+                    <tr>
+                        <td>@atendimento.DataHora.ToString("dd/MM/yyyy HH:mm")</td>
+                        <td>@atendimento.Tipo</td>
+                        <td>@atendimento.Profissional.NomeCompleto</td>
+                        <td>@atendimento.Status</td>
+                        <td>
+                            <a asp-controller="Atendimentos" asp-action="Details" asp-route-id="@atendimento.Id" class="btn btn-outline-info btn-sm" title="Ver Detalhes do Atendimento">
+                                <i class="fa-solid fa-circle-info"></i> Ver Detalhes
+                            </a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5" class="text-center">Nenhum atendimento registrado para este paciente.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+<div class="mt-4">
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Editar Cadastro</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar para a Lista</a>
+</div>

@@ -1,0 +1,88 @@
+﻿@model Hospisim.Models.ProfissionalDeSaude
+
+@{
+    ViewData["Title"] = "Cadastrar Novo Profissional";
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+
+<form asp-action="Create">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Informações Pessoais e Contato</h4>
+            <div class="form-group mb-3">
+                <label asp-for="NomeCompleto" class="control-label"></label>
+                <input asp-for="NomeCompleto" class="form-control" />
+                <span asp-validation-for="NomeCompleto" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="CPF" class="control-label"></label>
+                <input asp-for="CPF" class="form-control" />
+                <span asp-validation-for="CPF" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Telefone" class="control-label"></label>
+                <input asp-for="Telefone" class="form-control" />
+                <span asp-validation-for="Telefone" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h4>Informações Profissionais</h4>
+            <div class="form-group mb-3">
+                <label asp-for="EspecialidadeId" class="control-label"></label>
+                <select asp-for="EspecialidadeId" class="form-select" asp-items="ViewBag.EspecialidadeId">
+                    <option value="">Selecione...</option>
+                </select>
+                <span asp-validation-for="EspecialidadeId" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="TipoRegistro" class="control-label"></label>
+                <select asp-for="TipoRegistro" class="form-select">
+                    <option value="">Selecione...</option>
+                    <option value="CRM">CRM (Médico)</option>
+                    <option value="COREN">COREN (Enfermagem)</option>
+                    <option value="CRF">CRF (Farmácia)</option>
+                    <option value="Outro">Outro</option>
+                </select>
+                <span asp-validation-for="TipoRegistro" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="RegistroConselho" class="control-label"></label>
+                <input asp-for="RegistroConselho" class="form-control" />
+                <span asp-validation-for="RegistroConselho" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="DataAdmissao" class="control-label"></label>
+                <input asp-for="DataAdmissao" class="form-control" type="date" />
+                <span asp-validation-for="DataAdmissao" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Turno" class="control-label"></label>
+                <select asp-for="Turno" class="form-select">
+                    <option value="">Selecione...</option>
+                    <option value="Manhã">Manhã</option>
+                    <option value="Tarde">Tarde</option>
+                    <option value="Noite">Noite</option>
+                    <option value="Integral">Integral</option>
+                </select>
+                <span asp-validation-for="Turno" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check mb-3">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Ativo" /> @Html.DisplayNameFor(model => model.Ativo)
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group mt-4">
+        <input type="submit" value="Salvar Cadastro" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>

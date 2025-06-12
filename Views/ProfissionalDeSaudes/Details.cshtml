@@ -1,0 +1,69 @@
+﻿@model Hospisim.Models.ProfissionalDeSaude
+
+@{
+    ViewData["Title"] = "Detalhes do Profissional";
+}
+
+<h1>@Model.NomeCompleto</h1>
+<p>
+    <strong>@Model.Especialidade.Nome</strong> | Registro: <strong>@Model.RegistroConselho</strong> | Status: <strong>@(Model.Ativo ? "Ativo" : "Inativo")</strong>
+</p>
+<hr />
+
+<h4><i class="fa-solid fa-id-card"></i> Informações de Contato</h4>
+<dl class="row mt-3">
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.CPF)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.CPF)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Telefone)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.Telefone)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Email)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.Email)</dd>
+</dl>
+<hr />
+
+<h4><i class="fa-solid fa-briefcase"></i> Informações de Trabalho</h4>
+<dl class="row mt-3">
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DataAdmissao)</dt>
+    <dd class="col-sm-9">@Model.DataAdmissao.ToString("dd/MM/yyyy")</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Turno)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.Turno)</dd>
+</dl>
+<hr />
+
+<div class="mt-4">
+    <h4><i class="fa-solid fa-notes-medical"></i> Histórico de Atendimentos Realizados</h4>
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Paciente</th>
+                <th>Tipo</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var atendimento in Model.Atendimentos.OrderByDescending(a => a.DataHora))
+            {
+                <tr>
+                    <td>@atendimento.DataHora.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@atendimento.Paciente.NomeCompleto</td>
+                    <td>@atendimento.Tipo</td>
+                    <td>
+                        <a asp-controller="Atendimentos" asp-action="Details" asp-route-id="@atendimento.Id" class="btn btn-outline-info btn-sm" title="Ver Detalhes do Atendimento">
+                            <i class="fa-solid fa-circle-info"></i> Ver Detalhes
+                        </a>
+                    </td>
+                </tr>
+                
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="mt-4">
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar para a Lista</a>
+</div>

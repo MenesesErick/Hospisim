@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Hospisim.Models.Internacao>
+
+@{
+    ViewData["Title"] = "Internações";
+}
+
+<h1>Lista de Internações</h1>
+
+<form asp-action="Index" method="get">
+    <div class="input-group mb-3">
+        <input type="text" name="SearchString" class="form-control" placeholder="Buscar por Nome ou CPF do Paciente..." value="@ViewData["CurrentFilter"]" />
+        <button class="btn btn-outline-primary" type="submit">Buscar</button>
+        <a asp-action="Index" class="btn btn-outline-secondary">Limpar</a>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Paciente</th>
+            <th>Data de Entrada</th>
+            <th>Setor</th>
+            <th>Leito</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Atendimento.Paciente.NomeCompleto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataEntrada)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Setor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Leito)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StatusInternacao)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

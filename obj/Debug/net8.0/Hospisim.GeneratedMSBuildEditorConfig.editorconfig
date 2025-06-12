@@ -1,0 +1,217 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Hospisim
+build_property.RootNamespace = Hospisim
+build_property.ProjectDir = C:\Users\Erick\D\5_Periodo\Topicos3\Hospital-Projeto\Hospisim\Hospisim\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Erick\D\5_Periodo\Topicos3\Hospital-Projeto\Hospisim\Hospisim
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/AltasHospitalares/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx0YXNIb3NwaXRhbGFyZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/AltasHospitalares/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx0YXNIb3NwaXRhbGFyZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/AltasHospitalares/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx0YXNIb3NwaXRhbGFyZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/AltasHospitalares/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx0YXNIb3NwaXRhbGFyZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/AltasHospitalares/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx0YXNIb3NwaXRhbGFyZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Atendimentos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXRlbmRpbWVudG9zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Atendimentos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXRlbmRpbWVudG9zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Atendimentos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXRlbmRpbWVudG9zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Atendimentos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXRlbmRpbWVudG9zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Atendimentos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXRlbmRpbWVudG9zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Especialidades/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpYWxpZGFkZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Especialidades/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpYWxpZGFkZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Especialidades/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpYWxpZGFkZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Especialidades/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpYWxpZGFkZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Especialidades/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpYWxpZGFkZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Exames/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbWVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Exames/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbWVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Exames/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbWVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Exames/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbWVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Exames/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbWVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Internacaos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZXJuYWNhb3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Internacaos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZXJuYWNhb3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Internacaos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZXJuYWNhb3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Internacaos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZXJuYWNhb3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Internacaos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZXJuYWNhb3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Pacientes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Pacientes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Pacientes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Pacientes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Pacientes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Prescricaos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc2NyaWNhb3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Prescricaos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc2NyaWNhb3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Prescricaos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc2NyaWNhb3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Prescricaos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc2NyaWNhb3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Prescricaos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc2NyaWNhb3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/ProfissionalDeSaudes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlzc2lvbmFsRGVTYXVkZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/ProfissionalDeSaudes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlzc2lvbmFsRGVTYXVkZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/ProfissionalDeSaudes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlzc2lvbmFsRGVTYXVkZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/ProfissionalDeSaudes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlzc2lvbmFsRGVTYXVkZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/ProfissionalDeSaudes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlzc2lvbmFsRGVTYXVkZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Erick/D/5_Periodo/Topicos3/Hospital-Projeto/Hospisim/Hospisim/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-vp7fd8roo8
