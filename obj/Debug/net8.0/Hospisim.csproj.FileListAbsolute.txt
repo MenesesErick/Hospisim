@@ -260,3 +260,4 @@ C:\Users\Erick\D\5_Periodo\Topicos3\Hospital-Projeto\Hospisim\Hospisim\bin\Debug
 C:\Users\Erick\D\5_Periodo\Topicos3\Hospital-Projeto\Hospisim\Hospisim\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Erick\D\5_Periodo\Topicos3\Hospital-Projeto\Hospisim\Hospisim\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 C:\Users\Erick\D\5_Periodo\Topicos3\Hospital-Projeto\Hospisim\Hospisim\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Erick\D\5_Periodo\Topicos3\Hospital-Projeto\Hospisim\Hospisim\obj\Debug\net8.0\Hospisim.sourcelink.json
