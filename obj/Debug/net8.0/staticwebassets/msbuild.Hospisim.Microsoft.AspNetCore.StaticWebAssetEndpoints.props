@@ -28,13 +28,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Hospisim.ram5emo5jh.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-I6a8bOtekkccUWp6Fcn/fNQZ1DV3e81uyxyLe0nRavE="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1126"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022I6a8bOtekkccUWp6Fcn/fNQZ1DV3e81uyxyLe0nRavE=\u0022"},{"Name":"Last-Modified","Value":"Thu, 12 Jun 2025 18:41:24 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1126"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022I6a8bOtekkccUWp6Fcn/fNQZ1DV3e81uyxyLe0nRavE=\u0022"},{"Name":"Last-Modified","Value":"Fri, 13 Jun 2025 03:44:18 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Hospisim/Hospisim.ram5emo5jh.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Hospisim.ram5emo5jh.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ram5emo5jh"},{"Name":"integrity","Value":"sha256-I6a8bOtekkccUWp6Fcn/fNQZ1DV3e81uyxyLe0nRavE="},{"Name":"label","Value":"_content/Hospisim/Hospisim.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1126"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022I6a8bOtekkccUWp6Fcn/fNQZ1DV3e81uyxyLe0nRavE=\u0022"},{"Name":"Last-Modified","Value":"Thu, 12 Jun 2025 18:41:24 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1126"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022I6a8bOtekkccUWp6Fcn/fNQZ1DV3e81uyxyLe0nRavE=\u0022"},{"Name":"Last-Modified","Value":"Fri, 13 Jun 2025 03:44:18 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Hospisim/js/site.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>
