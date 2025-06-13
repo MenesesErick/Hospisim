@@ -1,95 +1,37 @@
 ﻿@model IEnumerable<Hospisim.Models.Prescricao>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Todas as Prescrições";
 }
 
-<h1>Index</h1>
+<h1>@ViewData["Title"]</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+<table class="table table-striped table-hover">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Medicamento)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Dosagem)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Frequencia)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ViaAdministracao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataInicio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataFim)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Observacoes)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StatusPrescricao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ReacoesAdversas)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Atendimento)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Profissional)
-            </th>
+            <th>Paciente</th>
+            <th>Medicamento</th>
+            <th>Profissional</th>
+            <th>Data de Início</th>
+            <th>Status</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Medicamento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Dosagem)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Frequencia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ViaAdministracao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataInicio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataFim)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Observacoes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StatusPrescricao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReacoesAdversas)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Atendimento.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Profissional.Id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Atendimento.Paciente.NomeCompleto</td>
+                <td>@item.Medicamento</td>
+                <td>@item.Profissional.NomeCompleto</td>
+                <td>@item.DataInicio.ToString("dd/MM/yyyy")</td>
+                <td>@item.StatusPrescricao</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-primary btn-sm" title="Editar"><i class="fa-solid fa-pencil"></i></a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-info btn-sm" title="Detalhes"><i class="fa-solid fa-circle-info"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm" title="Deletar"><i class="fa-solid fa-trash-can"></i></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

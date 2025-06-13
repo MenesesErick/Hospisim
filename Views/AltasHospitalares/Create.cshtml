@@ -5,11 +5,14 @@
 }
 
 <h1>@ViewData["Title"]</h1>
+<h4>Paciente: <strong>@Model.Internacao.Atendimento.Paciente.NomeCompleto</strong></h4>
+<p>Internação iniciada em: @Model.Internacao.DataEntrada.ToString("dd/MM/yyyy")</p>
 <hr />
+
 <div class="row">
     <div class="col-md-6">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="All" class="text-danger"></div>
             <input type="hidden" asp-for="InternacaoId" />
 
             <div class="form-group mb-3">
@@ -24,6 +27,7 @@
             </div>
             <div class="form-group">
                 <input type="submit" value="Confirmar Alta" class="btn btn-primary" />
+                <a asp-controller="Internacaos" asp-action="Details" asp-route-id="@Model.InternacaoId" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
     </div>

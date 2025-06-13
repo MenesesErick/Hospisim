@@ -1,33 +1,28 @@
 ﻿@model Hospisim.Models.Internacao
 
 @{
-    ViewData["Title"] = "Deletar Internação";
+    ViewData["Title"] = "Deletar Registro de Internação";
 }
 
-<h1>Deletar</h1>
+<h1>@ViewData["Title"]</h1>
 
-<h3>Você tem certeza que quer deletar esta internação?</h3>
+<h3 class="text-danger mt-4">Atenção! Você tem certeza que quer deletar este registro?</h3>
+<p>Esta ação é permanente e removerá todos os dados desta internação.</p>
 <div>
-    <h4>Internação</h4>
     <hr />
+    <h4>Internação a ser Deletada:</h4>
     <dl class="row">
-        <dt class="col-sm-2">
-            Paciente
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Atendimento.Paciente.NomeCompleto)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DataEntrada)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DataEntrada)
-        </dd>
+        <dt class="col-sm-3">Paciente</dt>
+        <dd class="col-sm-9">@Model.Atendimento.Paciente.NomeCompleto</dd>
+        <dt class="col-sm-3">Data de Entrada</dt>
+        <dd class="col-sm-9">@Model.DataEntrada.ToString("dd/MM/yyyy")</dd>
+        <dt class="col-sm-3">Motivo</dt>
+        <dd class="col-sm-9">@Model.MotivoInternacao</dd>
     </dl>
 
-    <form asp-action="Delete">
+    <form asp-action="Delete" class="mt-3">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Deletar" class="btn btn-danger" /> |
-        <a asp-action="Index">Voltar para a Lista</a>
+        <input type="submit" value="Sim, Deletar" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
     </form>
 </div>

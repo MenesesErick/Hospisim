@@ -31,6 +31,24 @@
         </aside>
 
         <div class="main-content">
+            <div class="container">
+                <main role="main" class="pb-3">
+
+                    @if (TempData["ErrorMessage"] != null)
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            @TempData["ErrorMessage"]
+                        </div>
+                    }
+                    @if (TempData["SuccessMessage"] != null)
+                    {
+                        <div class="alert alert-success" role="alert">
+                            @TempData["SuccessMessage"]
+                        </div>
+                    }
+                    @RenderBody()
+                </main>
+            </div>
             @RenderBody()
         </div>
     </div>

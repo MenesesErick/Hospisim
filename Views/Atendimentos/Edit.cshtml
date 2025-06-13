@@ -1,64 +1,66 @@
 ﻿@model Hospisim.Models.Atendimento
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Atendimento";
 }
 
-<h1>Edit</h1>
+<h1>@ViewData["Title"]</h1>
 
-<h4>Atendimento</h4>
+<h4>Atendimento para o paciente: <strong>@Model.Paciente.NomeCompleto</strong></h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
+            <input type="hidden" asp-for="PacienteId" />
+            <input type="hidden" asp-for="ProntuarioId" />
+
+            <div class="form-group mb-3">
+                <label asp-for="ProfissionalId" class="control-label"></label>
+                <select asp-for="ProfissionalId" class="form-select" asp-items="ViewBag.ProfissionalId"></select>
+                <span asp-validation-for="ProfissionalId" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
                 <label asp-for="DataHora" class="control-label"></label>
-                <input asp-for="DataHora" class="form-control" />
+                <input asp-for="DataHora" class="form-control" type="datetime-local" />
                 <span asp-validation-for="DataHora" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-3">
                 <label asp-for="Tipo" class="control-label"></label>
-                <input asp-for="Tipo" class="form-control" />
+                <select asp-for="Tipo" class="form-select">
+                    <option value="Consulta">Consulta</option>
+                    <option value="Emergência">Emergência</option>
+                    <option value="Retorno">Retorno</option>
+                    <option value="Exame">Exame</option>
+                </select>
                 <span asp-validation-for="Tipo" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-3">
                 <label asp-for="Status" class="control-label"></label>
-                <input asp-for="Status" class="form-control" />
+                <select asp-for="Status" class="form-select">
+                    <option value="Agendado">Agendado</option>
+                    <option value="Realizado">Realizado</option>
+                    <option value="Cancelado">Cancelado</option>
+                </select>
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-3">
                 <label asp-for="Local" class="control-label"></label>
                 <input asp-for="Local" class="form-control" />
                 <span asp-validation-for="Local" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PacienteId" class="control-label"></label>
-                <select asp-for="PacienteId" class="form-control" asp-items="ViewBag.PacienteId"></select>
-                <span asp-validation-for="PacienteId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProfissionalId" class="control-label"></label>
-                <select asp-for="ProfissionalId" class="form-control" asp-items="ViewBag.ProfissionalId"></select>
-                <span asp-validation-for="ProfissionalId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProntuarioId" class="control-label"></label>
-                <select asp-for="ProntuarioId" class="form-control" asp-items="ViewBag.ProntuarioId"></select>
-                <span asp-validation-for="ProntuarioId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Salvar Alterações" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

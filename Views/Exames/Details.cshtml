@@ -1,54 +1,35 @@
 ﻿@model Hospisim.Models.Exame
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes do Exame";
 }
 
-<h1>Details</h1>
+<h1>@ViewData["Title"]</h1>
 
 <div>
-    <h4>Exame</h4>
+    <h4>Exame Solicitado</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Tipo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Tipo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DataSolicitacao)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DataSolicitacao)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DataRealizacao)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DataRealizacao)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Resultado)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Resultado)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Atendimento)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Atendimento.Id)
-        </dd>
+        <dt class="col-sm-3">Paciente</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Atendimento.Paciente.NomeCompleto)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Tipo)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Tipo)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DataSolicitacao)</dt>
+        <dd class="col-sm-9">@Model.DataSolicitacao.ToString("dd/MM/yyyy")</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DataRealizacao)</dt>
+        <dd class="col-sm-9">@Model.DataRealizacao?.ToString("dd/MM/yyyy")</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Status)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Status)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Resultado)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Resultado)</dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div class="mt-4">
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar/Adicionar Resultado</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar para a Lista</a>
 </div>

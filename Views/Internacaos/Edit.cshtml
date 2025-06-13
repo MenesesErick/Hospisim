@@ -12,14 +12,19 @@
 <div class="row">
     <div class="col-md-6">
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="All" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-
             <input type="hidden" asp-for="AtendimentoId" />
+            <input type="hidden" asp-for="MotivoInternacao" />
+            <input type="hidden" asp-for="Leito" />
+            <input type="hidden" asp-for="Quarto" />
+            <input type="hidden" asp-for="Setor" />
+            <input type="hidden" asp-for="DataEntrada" />
+
 
             <div class="form-group mb-3">
                 <label asp-for="StatusInternacao" class="control-label"></label>
-                <select asp-for="StatusInternacao" class="form-control">
+                <select asp-for="StatusInternacao" class="form-select">
                     <option value="Ativa">Ativa</option>
                     <option value="Alta concedida">Alta concedida</option>
                     <option value="Transferido">Transferido</option>
@@ -27,32 +32,20 @@
                 </select>
                 <span asp-validation-for="StatusInternacao" class="text-danger"></span>
             </div>
-
             <div class="form-group mb-3">
                 <label asp-for="PrevisaoAlta" class="control-label"></label>
                 <input asp-for="PrevisaoAlta" class="form-control" type="date" />
                 <span asp-validation-for="PrevisaoAlta" class="text-danger"></span>
             </div>
-
             <div class="form-group mb-3">
                 <label asp-for="ObservacoesClinicas" class="control-label"></label>
                 <textarea asp-for="ObservacoesClinicas" class="form-control" rows="4"></textarea>
                 <span asp-validation-for="ObservacoesClinicas" class="text-danger"></span>
             </div>
-
             <div class="form-group">
                 <input type="submit" value="Salvar Alterações" class="btn btn-primary" />
+                <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
     </div>
 </div>
-
-<div class="mt-3">
-    <a asp-action="Index">Voltar para a Lista</a>
-</div>
-
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}

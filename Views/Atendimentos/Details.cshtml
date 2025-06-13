@@ -1,78 +1,124 @@
 ﻿@model Hospisim.Models.Atendimento
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes do Atendimento";
 }
 
-<h1>Details</h1>
+<h1>@ViewData["Title"]</h1>
 
 <div>
-    <h4>Atendimento</h4>
+    <h4>Dados Gerais</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DataHora)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DataHora)
+        <dt class="col-sm-3">Paciente</dt>
+        <dd class="col-sm-9">
+            <a asp-controller="Pacientes" asp-action="Details" asp-route-id="@Model.Paciente.Id">@Model.Paciente.NomeCompleto</a>
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Tipo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Tipo)
+
+        <dt class="col-sm-3">Profissional</dt>
+        <dd class="col-sm-9">
+            <a asp-controller="ProfissionalDeSaudes" asp-action="Details" asp-route-id="@Model.Profissional.Id">@Model.Profissional.NomeCompleto</a>
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Local)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Local)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Paciente)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Paciente.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Profissional)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Profissional.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Prontuario)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Prontuario.Id)
-        </dd>
+
+        <dt class="col-sm-3">Data e Hora</dt>
+        <dd class="col-sm-9">@Model.DataHora.ToString("dd/MM/yyyy HH:mm")</dd>
+
+        <dt class="col-sm-3">Tipo</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Tipo)</dd>
+
+        <dt class="col-sm-3">Status</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Status)</dd>
+
+        <dt class="col-sm-3">Local</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Local)</dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
 <hr />
-<h4>Prescrições deste Atendimento</h4>
-<table class="table">
-    @foreach (var prescricao in Model.Prescricoes)
-    {
-        <tr>
-            <td>@prescricao.Medicamento</td>
-            <td>@prescricao.Dosagem</td>
-        </tr>
-    }
-</table>
-<a asp-controller="Internacaos" asp-action="Create" asp-route-atendimentoId="@Model.Id" class="btn btn-danger">
-    Registrar Internação
-</a>
 
-<a asp-controller="Prescricaos" asp-action="Create" asp-route-atendimentoId="@Model.Id" class="btn btn-success">Adicionar Nova Prescrição</a>
-<a asp-controller="Exames" asp-action="Create" asp-route-atendimentoId="@Model.Id" class="btn btn-info">Solicitar Exame</a>
-<a asp-controller="Exames" asp-action="Create" asp-route-atendimentoId="@Model.Id" class="btn btn-info text-white">Solicitar Novo Exame</a>
+<h4><i class="fa-solid fa-stethoscope"></i> Ações Clínicas</h4>
+<div class="mt-3 mb-4">
+    <a asp-controller="Prescricaos" asp-action="Create" asp-route-atendimentoId="@Model.Id" class="btn btn-success"><i class="fa-solid fa-file-prescription"></i> Adicionar Prescrição</a>
+    <a asp-controller="Exames" asp-action="Create" asp-route-atendimentoId="@Model.Id" class="btn btn-info"><i class="fa-solid fa-vial"></i> Solicitar Exame</a>
+    @if (Model.Internacao == null)
+    {
+        <a asp-controller="Internacaos" asp-action="Create" asp-route-atendimentoId="@Model.Id" class="btn btn-danger"><i class="fa-solid fa-bed-pulse"></i> Registrar Internação</a>
+    }
+    else
+    {
+        <a asp-controller="Internacaos" asp-action="Details" asp-route-id="@Model.Internacao.Id" class="btn btn-secondary"><i class="fa-solid fa-eye"></i> Ver Detalhes da Internação</a>
+    }
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h5><i class="fa-solid fa-pills"></i> Prescrições Realizadas</h5>
+        @if (Model.Prescricoes.Any())
+        {
+            <table class="table table-sm table-hover">
+                <thead>
+                    <tr>
+                        <th>Medicamento</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var prescricao in Model.Prescricoes)
+                    {
+                        <tr>
+                            <td>@prescricao.Medicamento (@prescricao.Dosagem)</td>
+                            <td>@prescricao.StatusPrescricao</td>
+                            <td class="text-end">
+                                <a asp-controller="Prescricaos" asp-action="Edit" asp-route-id="@prescricao.Id" class="btn btn-outline-primary btn-sm" title="Editar"><i class="fa-solid fa-pencil"></i></a>
+                                <a asp-controller="Prescricaos" asp-action="Delete" asp-route-id="@prescricao.Id" class="btn btn-outline-danger btn-sm" title="Deletar"><i class="fa-solid fa-trash-can"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p class="text-muted">Nenhuma prescrição registrada para este atendimento.</p>
+        }
+    </div>
+    <div class="col-md-6">
+        <h5><i class="fa-solid fa-flask-vial"></i> Exames Solicitados</h5>
+        @if (Model.Exames.Any())
+        {
+            <table class="table table-sm table-hover">
+                <thead>
+                    <tr>
+                        <th>Tipo de Exame</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var exame in Model.Exames)
+                    {
+                        <tr>
+                            <td>@exame.Tipo</td>
+                            <td>@exame.Status</td>
+                            <td class="text-end">
+                                <a asp-controller="Exames" asp-action="Edit" asp-route-id="@exame.Id" class="btn btn-outline-primary btn-sm" title="Editar/Adicionar Resultado"><i class="fa-solid fa-pencil"></i></a>
+                                <a asp-controller="Exames" asp-action="Delete" asp-route-id="@exame.Id" class="btn btn-outline-danger btn-sm" title="Deletar"><i class="fa-solid fa-trash-can"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p class="text-muted">Nenhum exame solicitado para este atendimento.</p>
+        }
+    </div>
+</div>
+
+
+<div class="mt-4">
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar Atendimento</a>
+    <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger">Deletar Atendimento</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar para a Lista</a>
+</div>

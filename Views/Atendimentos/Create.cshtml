@@ -1,7 +1,7 @@
 ﻿@model Hospisim.Models.Atendimento
 
 @{
-    ViewData["Title"] = "Novo Atendimento";
+    ViewData["Title"] = "Registrar Novo Atendimento";
 }
 
 <h1>@ViewData["Title"]</h1>
@@ -10,52 +10,58 @@
     <div class="col-md-6">
         <form asp-action="Create">
             <div asp-validation-summary="All" class="text-danger"></div>
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="form-group mb-3">
-                <label asp-for="PacienteId" class="control-label">Paciente</label>
-                <select asp-for="PacienteId" class="form-control" asp-items="ViewBag.PacienteId">
+                <label asp-for="PacienteId" class="control-label"></label>
+                <select asp-for="PacienteId" class="form-select" asp-items="ViewBag.PacienteId">
                     <option value="">-- Selecione um Paciente --</option>
                 </select>
                 <span asp-validation-for="PacienteId" class="text-danger"></span>
             </div>
             <div class="form-group mb-3">
-                <label asp-for="ProfissionalId" class="control-label">Profissional de Saúde</label>
-                <select asp-for="ProfissionalId" class="form-control" asp-items="ViewBag.ProfissionalId">
+                <label asp-for="ProfissionalId" class="control-label"></label>
+                <select asp-for="ProfissionalId" class="form-select" asp-items="ViewBag.ProfissionalId">
                     <option value="">-- Selecione um Profissional --</option>
                 </select>
                 <span asp-validation-for="ProfissionalId" class="text-danger"></span>
             </div>
             <div class="form-group mb-3">
-                <label asp-for="DataHora" class="control-label">Data e Hora do Atendimento</label>
-                <input asp-for="DataHora" class="form-control" />
+                <label asp-for="DataHora" class="control-label"></label>
+                <input asp-for="DataHora" class="form-control" type="datetime-local" />
                 <span asp-validation-for="DataHora" class="text-danger"></span>
             </div>
             <div class="form-group mb-3">
                 <label asp-for="Tipo" class="control-label"></label>
-                <input asp-for="Tipo" class="form-control" />
+                <select asp-for="Tipo" class="form-select">
+                    <option value="">Selecione...</option>
+                    <option value="Consulta">Consulta</option>
+                    <option value="Emergência">Emergência</option>
+                    <option value="Retorno">Retorno</option>
+                    <option value="Exame">Exame</option>
+                </select>
                 <span asp-validation-for="Tipo" class="text-danger"></span>
             </div>
             <div class="form-group mb-3">
                 <label asp-for="Status" class="control-label"></label>
-                <input asp-for="Status" class="form-control" />
+                <select asp-for="Status" class="form-select">
+                    <option value="Agendado">Agendado</option>
+                    <option value="Realizado">Realizado</option>
+                    <option value="Cancelado">Cancelado</option>
+                </select>
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
             <div class="form-group mb-3">
                 <label asp-for="Local" class="control-label"></label>
-                <input asp-for="Local" class="form-control" />
+                <input asp-for="Local" class="form-control" placeholder="Ex: Consultório 10, Sala de Triagem..." />
                 <span asp-validation-for="Local" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <input type="submit" value="Registrar Atendimento" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
     </div>
-</div>
-
-<div class="mt-3">
-    <a asp-action="Index">Voltar para a Lista</a>
 </div>
 
 @section Scripts {

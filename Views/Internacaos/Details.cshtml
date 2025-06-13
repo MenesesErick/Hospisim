@@ -7,49 +7,38 @@
 <h1>@ViewData["Title"]</h1>
 
 <div>
-    <h4>Internação</h4>
+    <h4>Dados do Paciente</h4>
     <hr />
     <dl class="row">
-        <dt class="col-sm-2">
-            Paciente
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Atendimento.Paciente.NomeCompleto)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DataEntrada)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DataEntrada)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.MotivoInternacao)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.MotivoInternacao)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Setor)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Setor)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Leito)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Leito)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.StatusInternacao)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.StatusInternacao)
-        </dd>
+        <dt class="col-sm-3">Paciente</dt>
+        <dd class="col-sm-9">@Model.Atendimento.Paciente.NomeCompleto</dd>
+        <dt class="col-sm-3">Atendimento de Origem</dt>
+        <dd class="col-sm-9">@Model.Atendimento.DataHora.ToString("dd/MM/yyyy HH:mm")</dd>
     </dl>
 </div>
-<div>
-    <a asp-controller="AltasHospitalares" asp-action="Create" asp-route-internacaoId="@Model.Id" class="btn btn-warning">Conceder Alta Hospitalar</a>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
-    <a asp-action="Index">Voltar para a Lista</a>
+<div class="mt-3">
+    <h4>Dados da Internação</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DataEntrada)</dt>
+        <dd class="col-sm-9">@Model.DataEntrada.ToString("dd/MM/yyyy HH:mm")</dd>
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.StatusInternacao)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.StatusInternacao)</dd>
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Setor)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Setor)</dd>
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Quarto)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Quarto)</dd>
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Leito)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Leito)</dd>
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.MotivoInternacao)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.MotivoInternacao)</dd>
+    </dl>
+</div>
+<div class="mt-4">
+    @if (Model.StatusInternacao == "Ativa")
+    {
+        <a asp-controller="AltasHospitalares" asp-action="Create" asp-route-internacaoId="@Model.Id" class="btn btn-warning">Conceder Alta Hospitalar</a>
+    }
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar para a Lista</a>
 </div>
